@@ -5,13 +5,13 @@ if (NOT ELINA_FOUND)
   set(_ELINA_ORIG_CMAKE_FIND_LIBRARY_SUFFIXES ${CMAKE_FIND_LIBRARY_SUFFIXES})
 
   ### Elina does not produce static libraries  
-  #if(NOT BUILD_CRAB_LIBS_SHARED)
-  #  set(CMAKE_FIND_LIBRARY_SUFFIXES .a)
-  #else()
+  if(NOT BUILD_CRAB_LIBS_SHARED)
+    set(CMAKE_FIND_LIBRARY_SUFFIXES .a)
+  else()
   ### Elina dynamic libraries have .so extension even if they are built
   ### on mac osx.
-  set(CMAKE_FIND_LIBRARY_SUFFIXES .so .dylib)      
-  #endif()
+    set(CMAKE_FIND_LIBRARY_SUFFIXES .so .dylib)      
+  endif()
   
   set (ELINA_ROOT "" CACHE PATH "Root of Elina install.")
   
