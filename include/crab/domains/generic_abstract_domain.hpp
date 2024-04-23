@@ -644,8 +644,8 @@ private:
 
   std::unique_ptr<abstract_domain_concept> m_concept;
 
-  explicit abstract_domain(std::unique_ptr<abstract_domain_concept> concept)
-      : m_concept(std::move(concept)) {}
+  explicit abstract_domain(std::unique_ptr<abstract_domain_concept> p_concept)
+      : m_concept(std::move(p_concept)) {}
 
 public:
   /**===================================================**/
